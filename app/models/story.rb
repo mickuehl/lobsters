@@ -162,7 +162,7 @@ class Story < ApplicationRecord
       errors.add(:title, " starting 'Ask #{Rails.application.name}' or similar is redundant " <<
                           "with the ask tag.")
     end
-    if self.title.match(GRAPHICS_RE)
+    if self.title.match?(GRAPHICS_RE)
       errors.add(:title, " may not contain graphic codepoints")
     end
 
@@ -274,7 +274,7 @@ class Story < ApplicationRecord
   end
 
   def self.votes_cast_type
-    Story.connection.adapter_name.match(/mysql/i) ? "signed" : "integer"
+    Story.connection.adapter_name.match?(/mysql/i) ? "signed" : "integer"
   end
 
   def archive_url
@@ -832,6 +832,7 @@ class Story < ApplicationRecord
 
   def domain
     return @domain if @domain
+
     set_domain self.url.match(URL_RE) if self.url
   end
 
@@ -887,6 +888,7 @@ class Story < ApplicationRecord
     r_whos = {}
     votes.includes(user && user.is_moderator? ? :user : nil).find_each do |v|
       next if v.vote == 0
+
       r_counts[v.reason.to_s] ||= 0
       r_counts[v.reason.to_s] += v.vote
       if user && user.is_moderator?
@@ -968,7 +970,7 @@ class Story < ApplicationRecord
         title = title[0, title.length - site_name.length]
 
         # remove title/site name separator
-        if title.match(/ [ \-\|\u2013] $/)
+        if title.match?(/ [ \-\|\u2013] $/)
           title = title[0, title.length - 3]
         end
       end
