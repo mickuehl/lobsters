@@ -29,9 +29,9 @@ AllCops:
 # Layout
 Layout/AccessModifierIndentation:
   EnforcedStyle: outdent
-Layout/AlignArray:
+Layout/ArrayAlignment:
   Enabled: false
-Layout/AlignHash:
+Layout/HashAlignment:
   Enabled: false
 Layout/CaseIndentation:
   EnforcedStyle: end
@@ -43,7 +43,7 @@ Layout/EmptyLinesAroundExceptionHandlingKeywords:
   Enabled: false
 Layout/EndAlignment:
   EnforcedStyleAlignWith: variable
-Layout/IndentFirstHashElement:
+Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
 Layout/MultilineMethodCallBraceLayout:
   Enabled: false
@@ -58,7 +58,7 @@ Layout/SpaceInsideRangeLiteral:
   Enabled: false
 
 # Lint
-Lint/HandleExceptions:
+Lint/SuppressedException:
   Enabled: false
 
 # Metrics
@@ -91,7 +91,7 @@ Naming/MemoizedInstanceVariableName:
 Naming/PredicateName:
   Enabled: false
 # disabled until class vaiables in extras become constants
-Naming/UncommunicativeMethodParamName:
+Naming/MethodParameterName:
   Enabled: false
 Naming/VariableName:
   Enabled: false
