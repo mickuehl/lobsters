@@ -258,7 +258,7 @@ DEPENDENCIES
   mysql2
   nokogiri (>= 1.7.2)
   oauth
-  puma
+  puma (~> 4.3)
   rails (~> 5.2.0)
   rb-readline
   rotp

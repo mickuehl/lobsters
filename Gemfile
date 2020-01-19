@@ -19,7 +19,7 @@ gem "uglifier", ">= 1.3.0"
 gem "actionpack-page_caching"
 gem "exception_notification"
 #gem "unicorn"
-gem "puma"
+gem 'puma', '~> 4.3'
 
 # security
 gem "bcrypt", "~> 3.1.2"
