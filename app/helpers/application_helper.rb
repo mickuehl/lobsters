@@ -188,4 +188,5 @@ module ApplicationHelper
 
     raw(content_tag(:span, ago, title: time.strftime("%F %T %z"), class: span_class))
   end
+
 end

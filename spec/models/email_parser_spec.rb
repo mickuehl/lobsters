@@ -1,4 +1,5 @@
 require "rails_helper"
+require "email_parser"
 
 describe EmailParser do
   before(:each) do

@@ -1,4 +1,5 @@
 require "rails_helper"
+require "utils"
 
 describe Utils do
   describe ".silence_streams" do

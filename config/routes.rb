@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  root :to => "home#index",
-    :protocol => (Rails.application.config.force_ssl ? "https://" : "http://"),
-    :as => "root"
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'home#index'
 
   get "/404" => "home#four_oh_four", :via => :all
 
@@ -205,4 +204,5 @@ Rails.application.routes.draw do
   get "/chat" => "home#chat"
 
   post '/csp-violation-report' => 'csp#violation_report'
+
 end
